@@ -1,74 +1,91 @@
-=== Plugin Name ===
-Contributors: nicompiledev
-Donate link: https://github.com/nicompiledev/
-Tags: alt text, seo, images, media, automate, image optimization
-Requires at least: 5.0
-Tested up to: 6.5
-Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+# 🖼️ Auto Alt Text
 
-Auto Alt Text is a simple plugin that automatically generates alternative text for images.
+![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue?logo=wordpress)
+![License](https://img.shields.io/badge/License-GPLv2-blue.svg)
+![Version](https://img.shields.io/badge/Version-1.0.0-green)
+![Compatible](https://img.shields.io/badge/Tested%20Up%20To-6.5-brightgreen)
 
-== Description ==
+**Auto Alt Text** es un plugin ligero para WordPress que genera automáticamente texto alternativo (alt text) para las imágenes al subirlas. Mejora la accesibilidad y el SEO de tu sitio sin ningún esfuerzo manual.
 
-This plugin, Auto Alt Text, automatically generates alternative text (alt text) for images when they are uploaded to the WordPress media library.
+---
 
-It works by extracting the image's filename, cleaning it up (removing extensions, replacing dashes with spaces), and setting it as the alt text. This is a great practice for improving the accessibility and SEO of your website without manual effort.
+## 🚀 Características
 
-Features:
-* Automatically generates alt text from the image filename.
-* Cleans filenames to create readable alt text (e.g., "my-image-file.jpg" becomes "My Image File").
-* Prevents overwriting alt text if it has been manually entered by the user.
+- ✅ Genera automáticamente texto alternativo a partir del nombre del archivo de la imagen.
+- 🔤 Limpia los nombres de archivo eliminando extensiones y reemplazando guiones con espacios (por ejemplo, `mi-imagen-archivo.jpg` → **"Mi Imagen Archivo"**).
+- 🛡️ Respeta el texto alternativo ingresado manualmente; nunca lo sobrescribirá.
+- 🧠 Diseñado para ser extensible y para una futura integración con IA/LLM.
 
-== Installation ==
+---
 
-This section describes how to install the plugin and get it working.
+## 📦 Instalación
 
-1. Upload the `auto-alt-text` folder to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. The plugin will start working automatically on all new images uploaded to the media library. There are no settings to configure.
+1. Descarga o clona este repositorio.
+2. Sube la carpeta `auto-alt-text` al directorio `/wp-content/plugins/` de tu sitio de WordPress.
+3. Ve al panel de WordPress y activa el plugin a través del menú **Plugins**.
+4. ¡Listo! El plugin establecerá automáticamente el texto alternativo para todas las **nuevas** imágenes que subas.
 
-== Frequently Asked Questions ==
+> 🔧 No requiere configuración; funciona al instante.
 
-= Does this plugin affect existing images? =
+---
 
-No, this plugin only works on new images uploaded after the plugin has been activated. It will not modify the alt text of any existing images in your media library.
+## ❓ Preguntas Frecuentes
 
-= Is the generated alt text good for SEO? =
+### ¿Afecta a las imágenes existentes?
+No. Solo procesa las imágenes que se suban después de que el plugin esté activado.
 
-Yes. While manually writing descriptive alt text is always best, this plugin ensures that your images have descriptive alt text instead of being left empty. This is a significant improvement for both SEO and accessibility.
+### ¿El texto alternativo generado es bueno para el SEO?
+Sí. Aunque un texto alternativo escrito a mano es ideal, tener un texto legible y no vacío a partir del nombre de archivo es una gran mejora para el SEO y la accesibilidad.
 
-= What if I want to manually change the alt text? =
+### ¿Puedo editar el texto alternativo manualmente?
+Sí. Puedes editarlo en cualquier momento a través de la Biblioteca de Medios. Este plugin nunca sobrescribirá el texto ingresado manualmente.
 
-You can still manually edit the alt text for any image in the media library. The plugin will not overwrite a manually entered alt text.
+---
 
-== Screenshots ==
+## 🖼️ Capturas de Pantalla
 
-1. A screenshot showing how the alt text is automatically generated after uploading an image.
-2. A second screenshot showing a clean alt text from a filename with numbers at the end.
+| Ejemplo de Carga | Texto Alternativo Limpiado |
+|------------------|----------------------------|
+| ![Ejemplo de Carga](assets/screenshot-1.png) | ![Texto Alternativo Limpio](assets/screenshot-2.png) |
 
-== Changelog ==
+---
 
-= 1.0.0 =
-* Initial release of the plugin.
-* Automatically generates alt text from image filenames.
-* Skips generation if alt text is already set.
+## 🧱 Estructura del Plugin y Visión Futura
 
-== Upgrade Notice ==
+Este plugin está construido pensando en la escalabilidad. Aquí tienes un desglose de la estructura de archivos actual y los planes para futuras mejoras:
 
-= 1.0.0 =
-Initial release. No upgrade notice is needed.
+auto-alt-text/
+│
+├── auto-alt-text.php      # Archivo principal del plugin
+├── uninstall.php          # Maneja la limpieza al desinstalar
+│
+├── includes/              # Lógica principal futura (p. ej., análisis de imágenes, integración con LLM)
+├── admin/                 # Código futuro del panel de administración (p. ej., UI de configuración)
+├── public/                # Scripts y estilos de front-end (si se necesitan más adelante)
+└── languages/             # Preparado para traducciones (.pot/.mo/.po)
 
-== Plugin Structure and Future Vision ==
+> 💡 Las futuras versiones podrían incluir la generación de texto alternativo con LLM, reglas de texto personalizadas o análisis de imágenes.
 
-This plugin adheres to the structure of a professional WordPress plugin to ensure scalability and maintainability. Below is a breakdown of the files and directories and how they will be used in future versions:
+---
 
-* **`auto-alt-text.php`**: The main file. It currently contains all the logic, but in future versions, it will be used mainly to load the plugin's classes and functions.
-* **`includes/`**: This directory will house the main logic, such as classes that handle connections to external APIs or image processing logic. For example, in a future version that integrates language models (LLM) to analyze images, the class that manages communication with the API would be located here.
-* **`admin/`**: Will contain the code for the admin interface. An advanced version could have a settings page for users to configure the LLM API or text generation rules.
-* **`public/`**: Will store scripts and styles needed for the frontend if the plugin requires them in the future.
-* **`languages/`**: Will be used for translation files, allowing the plugin to be compatible with other languages.
-* **`uninstall.php`**: Will contain the logic to clean up the plugin's data upon uninstallation.
+## 🧾 Historial de Versiones
 
-This structure allows me to start with a basic and functional version, with a clear path for future improvements without compromising the current code.
+### v1.0.0
+- Lanzamiento inicial.
+- Genera automáticamente texto alternativo a partir de los nombres de archivo.
+- Omite la generación si el campo ya contiene una entrada del usuario.
+
+---
+
+## 📄 Licencia
+
+Este plugin está bajo la licencia [GPLv2 o posterior](http://www.gnu.org/licenses/gpl-2.0.html).
+
+---
+
+## ☕ Soporte y Contribuciones
+
+- Si este plugin te resulta útil, [considera apoyarme](https://github.com/nicompiledev/).
+- ¡Se aceptan "pull requests", sugerencias de características e informes de errores!
+
+---
