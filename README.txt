@@ -44,9 +44,9 @@ Sí. Puedes editarlo en cualquier momento a través de la Biblioteca de Medios. 
 
 ## 🖼️ Capturas de Pantalla
 
-| Ejemplo de Carga | Texto Alternativo Limpiado |
+| Activación Plugin | Texto Alternativo Añadido |
 |------------------|----------------------------|
-| ![Ejemplo de Carga](assets/screenshot-1.png) | ![Texto Alternativo Limpio](assets/screenshot-2.png) |
+| ![Ejemplo de Carga](assets/activacion-plugin.png) | ![Texto Alternativo Añadido](assets/ejemplo-de-uso.png) |
 
 ---
 
